@@ -43,3 +43,23 @@ const selim = new PersonCl('Selimcan Özgür', 1998);
 
 selim.calcAge();
 PersonCl.hey();
+
+// Inheritance için 2 anahtar kelime: extends ve super()
+//
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  }
+  calcAge() {
+    console.log(`I'am ${2024 - this.birthYear} years old.`);
+  }
+}
+
+const newSelim = new StudentCl('Selimcan Özgür', 1998, 'JavaScript');
+newSelim.introduce();
+newSelim.calcAge();
