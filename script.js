@@ -22,5 +22,5 @@ console.log(Person.prototype.isPrototypeOf(selim));
 Person.prototype.species = 'Homo Sapiens';
 
 console.log(selim.species);
-console.log(selim.hasOwnProperty('firstName')); // trure
+console.log(selim.hasOwnProperty('firstName')); // true
 console.log(selim.hasOwnProperty('species')); // false
