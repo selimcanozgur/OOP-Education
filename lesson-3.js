@@ -13,10 +13,19 @@ const PersonProto = {
 
 const selim = Object.create(PersonProto);
 
-selim.firstName = 'Selim';
-selim.birthYear = 1998;
-selim.calcAge();
+const StudentProto = Object.create(PersonProto);
+StudentProto.init = function (firstName, birthYear, course) {
+  PersonProto.init.call(this, firstName, birthYear);
+  this.course = course;
+};
 
-const ali = Object.create(PersonProto);
-ali.init('Ali', 1974);
-ali.calcAge();
+StudentProto.introduce = function () {
+  console.log(
+    `My name is ${this.firstName} and i study this course ${this.course}`
+  );
+};
+
+const ali = Object.create(StudentProto);
+
+ali.init('Ali', 1992, 'JavaScript');
+ali.introduce();
